@@ -27,7 +27,7 @@ import yt_dlp
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from youtube_search import Youtubesearch
+from youtube_search import YoutubeSearch
 
 from FallenMusic import BOT_MENTION, BOT_USERNAME, LOGGER, app
 
