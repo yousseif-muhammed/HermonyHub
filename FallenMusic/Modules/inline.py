@@ -25,7 +25,7 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
     InlineQueryResultPhoto,
 )
-from youtubesearchpython.__future__ import Videossearch
+from youtubesearchpython.__future__ import VideosSearch
 
 from FallenMusic import BOT_NAME, app
 
