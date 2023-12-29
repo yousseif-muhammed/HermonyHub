@@ -37,8 +37,4 @@ def __list_all_modules():
 
 
 ALL_MODULES = sorted(__list_all_modules())
-<<<<<<< HEAD
-__all__ = ALL_MODULEs + ["ALL_MODULES"]
-=======
 __all__ = ALL_MODULES + ["ALL_MODULES"]
->>>>>>> refs/remotes/origin/main
