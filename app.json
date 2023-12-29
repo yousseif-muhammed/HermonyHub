@@ -16,7 +16,7 @@
         "value": "",
         "required": true
       },
-      "API_HAsH": {
+      "API_HASH": {
         "description": "Get this value from https://my.telegram.org",
         "value": "",
         "required": true
@@ -31,17 +31,17 @@
         "value": "5356545108",
         "required": true
       },
-      "sEssION": {
+      "SESSION": {
         "description": "A pyrogram v2 string session from @stringFatherBot",
         "value": "",
         "required": true
       },
-      "sUDO_UsERs": {
+      "SUDO_USERS": {
         "description": "The user id(s) of user(s) whom you would like to add as a sudo. Multiple values shall be seperated with a space.",
         "value": "",
         "required": true
       },
-      "sUPPORT_CHAT": {
+      "SUPPORT_CHAT": {
         "description": "Link of your telegram support group. (Must pe public)",
         "value": "https://t.me/HermonyHubGroup",
         "required": false
