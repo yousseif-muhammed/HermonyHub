@@ -23,7 +23,7 @@
 from pyrogram import filters
 from pyrogram.enums import ChatType, ParseMode
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from youtubesearchpython.__future__ import Videossearch
+from youtubesearchpython.__future__ import VideosSearch
 
 import config
 from FallenMusic import BOT_MENTION, BOT_NAME, app
