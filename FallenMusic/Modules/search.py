@@ -22,7 +22,7 @@
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from youtube_search import Youtubesearch
+from youtube_search import YoutubeSearch
 
 from FallenMusic import app
 
