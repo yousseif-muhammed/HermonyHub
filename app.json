@@ -33,7 +33,6 @@
       },
       "SESSION": {
         "description": "A pyrogram v2 string SESSION from @stringFatherBot",
-        "description": "A pyrogram v2 string session from @stringFatherBot",
         "value": "BAEzmdUAqi76zSl31q7wOKnffdAiMTQQzicI-2NSO2BiJiuW0NUj42rQD2JOPAxMeVlh0Z0EDlldhniZCfqCIsPntpAzLiDq9hiozNIPKcX3xVsqYrhstGfX3s2z4wESDlo0qjHxDIzDyIcxIBJPAaGyMZ1eTYdVRKCkqj00eBK_Pad8mynCxB5o7aeRn2aRPUID3VxvRwZqQhdnozKes8MizBBvaZRUMx2tF5p08dHyFevyZbnHzW2QQfTWJoKDPRompUskwTb9oapG9HPdx-PVycekLxuy9ht9VyMuOdyPeCLqvf13DI83QrCRwM_YAfZgJ7zQY5qIGe0TVl4vFfHtVyrHSgAAAAGFtg7RAA",
         "required": true
       },
