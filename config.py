@@ -24,4 +24,8 @@ SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ZEDTOOL")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "6538268369").split()))
 
 
+<<<<<<< HEAD
 FAILED = "https://i.ibb.co/j3gQ0zw/channels4-profile.jpg"
+=======
+FAILED = "https://i.ibb.co/j3gQ0zw/channels4-profile.jpg"
+>>>>>>> refs/remotes/origin/main
