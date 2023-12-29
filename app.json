@@ -1,0 +1,62 @@
+{
+    "name": "HermonyHub Bot Music",
+    "description": "A VC Player Bot for telegram videochats, written in Python with Pyrogram and Py-Tgcalls.",
+    "logo": "https://i.ibb.co/j3gQ0zw/channels4-profile.jpg",
+    "keywords": [
+    "python3",
+    "telegram",
+    "HermunyHub",
+    "MusicBot",
+    "telegram-bot",
+    "pyrogram"
+    ],
+    "env": {
+      "API_ID": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "API_HAsH": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "BOT_TOKEN": {
+        "description": "A Bot's token from Botfather",
+        "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "Fill your user id here. (Must be integer)",
+        "value": "5356545108",
+        "required": true
+      },
+      "sEssION": {
+        "description": "A pyrogram v2 string session from @stringFatherBot",
+        "value": "",
+        "required": true
+      },
+      "sUDO_UsERs": {
+        "description": "The user id(s) of user(s) whom you would like to add as a sudo. Multiple values shall be seperated with a space.",
+        "value": "",
+        "required": true
+      },
+      "sUPPORT_CHAT": {
+        "description": "Link of your telegram support group. (Must pe public)",
+        "value": "https://t.me/HermonyHubGroup",
+        "required": false
+      }
+    },
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "stack": "container"
+  }
