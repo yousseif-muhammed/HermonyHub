@@ -26,7 +26,7 @@ import subprocess
 import sys
 import traceback
 from inspect import getfullargspec
-from io import stringIO
+from io import StringIO
 from time import time
 
 from pyrogram import filters
