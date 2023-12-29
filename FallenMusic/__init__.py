@@ -46,14 +46,14 @@ LOGGER = logging.getLogger("FallenMusic")
 app = Client(
     "FallenMusic",
     config.API_ID,
-    config.API_HAsH,
+    config.API_HASH,
     bot_token=config.BOT_TOKEN,
 )
 
 app2 = Client(
     "FallenAss",
     api_id=config.API_ID,
-    api_hash=config.API_HAsH,
+    api_hash=config.API_HASH,
     session_string=str(config.SESSION),
 )
 
