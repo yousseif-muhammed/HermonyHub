@@ -23,12 +23,12 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from FallenMusic import sUDOERs, app
+from FallenMusic import SUDOERS, app
 from FallenMusic.Helpers.active import get_active_chats
 from FallenMusic.Helpers.inline import close_key
 
 
-@app.on_message(filters.command("activevc") & sUDOERs)
+@app.on_message(filters.command("activevc") & SUDOERS)
 async def activevc(_, message: Message):
     mystic = await message.reply_text("Getting active voicechats list...")
     chats = await get_active_chats()
@@ -39,8 +39,8 @@ async def activevc(_, message: Message):
             title = (await app.get_chat(chat)).title
         except Exception:
             title = "Private Chat"
-        if (await app.get_chat(chat)).username:
-            user = (await app.get_chat(chat)).username
+        if (await app.get_chat(chat)).USERNAMe:
+            user = (await app.get_chat(chat)).USERNAMe
             text += f"<b>{j + 1}.</b>  [{title}](https://t.me/{user})\n"
         else:
             text += f"<b>{j + 1}. {title}</b> [`{chat}`]\n"

@@ -23,7 +23,7 @@
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 import config
-from FallenMusic import BOT_UsERNAME
+from FallenMusic import BOT_USERNAME
 
 close_key = InlineKeyboardMarkup(
     [[InlineKeyboardButton(text="Close", callback_data="close")]]
@@ -46,7 +46,7 @@ pm_buttons = [
     [
         InlineKeyboardButton(
             text="Add Me To Your Group",
-            url=f"https://t.me/{BOT_UsERNAME}?startgroup=true",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         )
     ],
     [InlineKeyboardButton(text="Help", callback_data="fallen_help")],
@@ -64,7 +64,7 @@ gp_buttons = [
     [
         InlineKeyboardButton(
             text="Add Me To Your Group",
-            url=f"https://t.me/{BOT_UsERNAME}?startgroup=true",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         )
     ],
     [

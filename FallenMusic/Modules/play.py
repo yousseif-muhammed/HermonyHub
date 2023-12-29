@@ -38,12 +38,12 @@ from youtube_search import Youtubesearch
 
 from config import DURATION_LIMIT
 from FallenMusic import (
-    Ass_ID,
-    Ass_MENTION,
-    Ass_NAME,
-    Ass_UsERNAME,
+    ASS_ID,
+    ASS_MENTION,
+    ASS_NAME,
+    ASS_USERNAME,
     BOT_NAME,
-    BOT_UsERNAME,
+    BOT_USERNAME,
     LOGGER,
     app,
     app2,
@@ -74,7 +74,7 @@ async def play(_, message: Message):
 
     try:
         try:
-            get = await app.get_chat_member(message.chat.id, Ass_ID)
+            get = await app.get_chat_member(message.chat.id, ASS_ID)
         except ChatAdminRequired:
             return await fallen.edit_text(
                 f"» i don't have permissions to invite users via link for inviting {BOT_NAME} assistant to {message.chat.title}."
@@ -84,19 +84,19 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text=f"unban {Ass_NAME}",
-                            callback_data=f"unban_assistant {message.chat.id}|{Ass_ID}",
+                            text=f"unban {ASS_NAME}",
+                            callback_data=f"unban_assistant {message.chat.id}|{ASS_ID}",
                         ),
                     ]
                 ]
             )
             return await fallen.edit_text(
-                text=f"» {BOT_NAME} assistant is banned in {message.chat.title}\n\n𖢵 id : `{Ass_ID}`\n𖢵 name : {Ass_MENTION}\n𖢵 username : @{Ass_UsERNAME}\n\nplease unban the assistant and play again...",
+                text=f"» {BOT_NAME} assistant is banned in {message.chat.title}\n\n𖢵 id : `{ASS_ID}`\n𖢵 name : {ASS_MENTION}\n𖢵 USERNAMe : @{ASS_USERNAME}\n\nplease unban the assistant and play again...",
                 reply_markup=unban_butt,
             )
     except UserNotParticipant:
-        if message.chat.username:
-            invitelink = message.chat.username
+        if message.chat.USERNAMe:
+            invitelink = message.chat.USERNAMe
             try:
                 await app2.resolve_peer(invitelink)
             except Exception as ex:
@@ -115,13 +115,13 @@ async def play(_, message: Message):
         if invitelink.startswith("https://t.me/+"):
             invitelink = invitelink.replace("https://t.me/+", "https://t.me/joinchat/")
         anon = await fallen.edit_text(
-            f"please wait...\n\ninviting {Ass_NAME} to {message.chat.title}."
+            f"please wait...\n\ninviting {ASS_NAME} to {message.chat.title}."
         )
         try:
             await app2.join_chat(invitelink)
             await asyncio.sleep(2)
             await fallen.edit_text(
-                f"{Ass_NAME} joined successfully,\n\nstarting stream..."
+                f"{ASS_NAME} joined successfully,\n\nstarting stream..."
             )
         except UserAlreadyParticipant:
             pass
@@ -221,7 +221,7 @@ async def play(_, message: Message):
         qimg = await gen_qthumb(videoid, message.from_user.id)
         await message.reply_photo(
             photo=qimg,
-            caption=f"**➻ added to queue at {position}**\n\n‣ **title :** [{title[:27]}](https://t.me/{BOT_UsERNAME}?start=info_{videoid})\n‣ **duration :** `{duration}` minutes\n‣ **requested by :** {ruser}",
+            caption=f"**➻ added to queue at {position}**\n\n‣ **title :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **duration :** `{duration}` minutes\n‣ **requested by :** {ruser}",
             reply_markup=buttons,
         )
     else:
@@ -243,7 +243,7 @@ async def play(_, message: Message):
             )
         except UnMuteNeeded:
             return await fallen.edit_text(
-                f"» {BOT_NAME} assistant is muted on videochat,\n\nplease unmute {Ass_MENTION} on videochat and try playing again."
+                f"» {BOT_NAME} assistant is muted on videochat,\n\nplease unmute {ASS_MENTION} on videochat and try playing again."
             )
 
         imgt = await gen_thumb(videoid, message.from_user.id)
@@ -251,7 +251,7 @@ async def play(_, message: Message):
         await add_active_chat(message.chat.id)
         await message.reply_photo(
             photo=imgt,
-            caption=f"**➻ started streaming**\n\n‣ **title :** [{title[:27]}](https://t.me/{BOT_UsERNAME}?start=info_{videoid})\n‣ **duration :** `{duration}` minutes\n‣ **requested by :** {ruser}",
+            caption=f"**➻ started streaming**\n\n‣ **title :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **duration :** `{duration}` minutes\n‣ **requested by :** {ruser}",
             reply_markup=buttons,
         )
 

@@ -24,7 +24,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from config import OWNER_ID
-from FallenMusic import sUDOERs, app
+from FallenMusic import SUDOERS, app
 
 
 @app.on_message(filters.command(["addsudo"]) & filters.user(OWNER_ID))
@@ -36,31 +36,31 @@ async def sudoadd(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             return await message.reply_text(
-                "» reply to a user's message or give username/user id."
+                "» reply to a user's message or give USERNAMe/user id."
             )
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
         user = await app.get_users(user)
-        if int(user.id) in sUDOERs:
+        if int(user.id) in SUDOERS:
             return await message.reply_text(f"» {user.mention} is already a sudo user.")
         try:
-            sUDOERs.add(int(user.id))
+            SUDOERS.add(int(user.id))
             await message.reply_text(f"added {user.mention} in sudo users list.")
         except:
-            return await message.reply_text("failed to add user in sudoers.")
+            return await message.reply_text("failed to add user in SUDOERS.")
 
-    if message.reply_to_message.from_user.id in sUDOERs:
+    if message.reply_to_message.from_user.id in SUDOERS:
         return await message.reply_text(
             f"» {message.reply_to_message.from_user.mention} is already a sudo user."
         )
     try:
-        sUDOERs.add(message.reply_to_message.from_user.id)
+        SUDOERS.add(message.reply_to_message.from_user.id)
         await message.reply_text(
             f"added {message.reply_to_message.from_user.mention} in sudo users list."
         )
     except:
-        return await message.reply_text("failed to add user in sudoers.")
+        return await message.reply_text("failed to add user in SUDOERS.")
 
 
 @app.on_message(filters.command(["delsudo", "rmsudo"]) & filters.user(OWNER_ID))
@@ -72,40 +72,40 @@ async def sudodel(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             return await message.reply_text(
-                "» reply to a user's message or give username/user id."
+                "» reply to a user's message or give USERNAMe/user id."
             )
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
         user = await app.get_users(user)
-        if int(user.id) not in sUDOERs:
+        if int(user.id) not in SUDOERS:
             return await message.reply_text(
                 f"» {user.mention} is not in sudo users list."
             )
         try:
-            sUDOERs.remove(int(user.id))
+            SUDOERS.remove(int(user.id))
             return await message.reply_text(
                 f"» removed {user.mention} from sudo users list."
             )
         except:
-            return await message.reply_text(f"failed to remove user from sudoers.")
+            return await message.reply_text(f"failed to remove user from SUDOERS.")
     else:
         user_id = message.reply_to_message.from_user.id
-        if int(user_id) not in sUDOERs:
+        if int(user_id) not in SUDOERS:
             return await message.reply_text(
                 f"» {message.reply_to_message.from_user.mention} is not in sudo users list."
             )
         try:
-            sUDOERs.remove(int(user_id))
+            SUDOERS.remove(int(user_id))
             return await message.reply_text(
                 f"» removed {message.reply_to_message.from_user.mention} from sudo users list."
             )
         except:
-            return await message.reply_text(f"failed to remove user from sudoers.")
+            return await message.reply_text(f"failed to remove user from SUDOERS.")
 
 
-@app.on_message(filters.command(["sudolist", "sudoers", "sudo"]))
-async def sudoers_list(_, message: Message):
+@app.on_message(filters.command(["sudolist", "SUDOERS", "sudo"]))
+async def SUDOERS_list(_, message: Message):
     hehe = await message.reply_text("» getting sudo users list...")
     text = "<u>🥀 **owner :**</u>\n"
     count = 0
@@ -114,14 +114,14 @@ async def sudoers_list(_, message: Message):
     count += 1
     text += f"{count}➤ {user}\n"
     smex = 0
-    for user_id in sUDOERs:
+    for user_id in SUDOERS:
         if user_id != OWNER_ID:
             try:
                 user = await app.get_users(user_id)
                 user = user.first_name if not user.mention else user.mention
                 if smex == 0:
                     smex += 1
-                    text += "\n<u>✨ **sudoers :**</u>\n"
+                    text += "\n<u>✨ **SUDOERS :**</u>\n"
                 count += 1
                 text += f"{count}➤ {user}\n"
             except Exception:

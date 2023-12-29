@@ -88,7 +88,7 @@ HELP_DEV = f"""
 
 /leaveall: Orders the assistant account to leave all chats.
 
-/addsudo [Username or reply to a user]: Add the user to the sudo users list.
+/addsudo [USERNAMe or reply to a user]: Add the user to the sudo users list.
 
-/rmsudo [Username or reply to a user]: Remove the user from sudo users list.
+/rmsudo [USERNAMe or reply to a user]: Remove the user from sudo users list.
 """

@@ -27,12 +27,12 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
 from config import OWNER_ID
-from FallenMusic import Ass_MENTION, sUNAME, app, app2
+from FallenMusic import ASS_MENTION, sUNAME, app, app2
 
 
 @app.on_message(filters.command(["leaveall", "assleaveall"]) & filters.user(OWNER_ID))
-async def ass_leaveall(_, message: Message):
-    lear = await message.reply_text(f"» {Ass_MENTION} started leaving chats...")
+async def ASS_leaveall(_, message: Message):
+    lear = await message.reply_text(f"» {ASS_MENTION} started leaving chats...")
     left = 0
     failed = 0
     chats = []
@@ -55,9 +55,9 @@ async def ass_leaveall(_, message: Message):
             failed += 1
     try:
         await lear.edit_text(
-            f"<u>**» {Ass_MENTION} successfully left chats :**</u>\n\n**left :** `{left}`\n**failed :** `{failed}`"
+            f"<u>**» {ASS_MENTION} successfully left chats :**</u>\n\n**left :** `{left}`\n**failed :** `{failed}`"
         )
     except:
         await message.reply_text(
-            f"<u>**» {Ass_MENTION} successfully left chats :**</u>\n\n**left :** `{left}`\n**failed :** `{failed}`"
+            f"<u>**» {ASS_MENTION} successfully left chats :**</u>\n\n**left :** `{left}`\n**failed :** `{failed}`"
         )

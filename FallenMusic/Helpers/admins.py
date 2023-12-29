@@ -25,7 +25,7 @@ from typing import Callable
 from pyrogram.enums import ChatMemberstatus
 from pyrogram.types import CallbackQuery, Message
 
-from FallenMusic import sUDOERs, app
+from FallenMusic import SUDOERS, app
 
 from .active import is_active_chat
 
@@ -35,7 +35,7 @@ def admin_check(func: Callable) -> Callable:
         if not await is_active_chat(message.chat.id):
             return await message.reply_text("Bot isn't streaming on videochat.")
 
-        if message.from_user.id in sUDOERs:
+        if message.from_user.id in SUDOERS:
             return await func(_, message)
 
         check = await app.get_chat_member(message.chat.id, message.from_user.id)
@@ -64,7 +64,7 @@ def admin_check_cb(func: Callable) -> Callable:
                 "Bot isn't streaming on videochat.", show_alert=True
             )
 
-        if query.from_user.id in sUDOERs:
+        if query.from_user.id in SUDOERS:
             return await func(_, query)
 
         try:

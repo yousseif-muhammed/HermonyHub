@@ -32,11 +32,11 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pytgcalls.__version__ import __version__ as pytgver
 
-from FallenMusic import BOT_NAME, sUDOERs, app
+from FallenMusic import BOT_NAME, SUDOERS, app
 from FallenMusic.Modules import ALL_MODULEs
 
 
-@app.on_message(filters.command(["stats", "sysstats"]) & sUDOERs)
+@app.on_message(filters.command(["stats", "sysstats"]) & SUDOERS)
 async def sys_stats(_, message: Message):
     sysrep = await message.reply_text(
         f"getting {BOT_NAME} system stats, it'll take a while..."
@@ -45,7 +45,7 @@ async def sys_stats(_, message: Message):
         await message.delete()
     except:
         pass
-    sudoers = len(sUDOERs)
+    SUDOERS = len(SUDOERS)
     mod = len(ALL_MODULEs)
     hostname = socket.gethostname()
     ip_address = socket.gethostbyname(socket.gethostname())
@@ -81,7 +81,7 @@ async def sys_stats(_, message: Message):
 **python :** {pyver.split()[0]}
 **pyrogram :** {pyrover}
 **py-tgcalls :** {pytgver}
-**sudoers :** `{sudoers}`
+**SUDOERS :** `{SUDOERS}`
 **modules :** `{mod}`
 
 **ip :** {ip_address}

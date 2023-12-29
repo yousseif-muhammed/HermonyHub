@@ -24,7 +24,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from pytgcalls.types import AudioPiped, HighQualityAudio
 
-from FallenMusic import BOT_UsERNAME, app, fallendb, pytgcalls
+from FallenMusic import BOT_USERNAME, app, fallendb, pytgcalls
 from FallenMusic.Helpers import _clear_, admin_check, buttons, close_key, gen_thumb
 
 
@@ -72,6 +72,6 @@ async def skip_str(_, message: Message):
         img = await gen_thumb(videoid, user_id)
         return await message.reply_photo(
             photo=img,
-            caption=f"**➻ started streaming**\n\n‣ **title :** [{title[:27]}](https://t.me/{BOT_UsERNAME}?start=info_{videoid})\n‣ **duration :** `{duration}` minutes\n‣ **requested by :** {req_by}",
+            caption=f"**➻ started streaming**\n\n‣ **title :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **duration :** `{duration}` minutes\n‣ **requested by :** {req_by}",
             reply_markup=buttons,
         )

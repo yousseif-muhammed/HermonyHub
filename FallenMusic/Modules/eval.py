@@ -32,7 +32,7 @@ from time import time
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from FallenMusic import LOGGER, sUDOERs, app
+from FallenMusic import LOGGER, SUDOERS, app
 
 
 async def aexec(code, client, message):
@@ -49,8 +49,8 @@ async def edit_or_reply(msg: Message, **kwargs):
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-@app.on_edited_message(filters.command("eval") & sUDOERs & ~filters.forwarded)
-@app.on_message(filters.command("eval") & sUDOERs & ~filters.forwarded)
+@app.on_edited_message(filters.command("eval") & SUDOERS & ~filters.forwarded)
+@app.on_message(filters.command("eval") & SUDOERS & ~filters.forwarded)
 async def executor(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="**what you wanna execute baby ?**")
@@ -131,9 +131,9 @@ async def runtime_func_cq(_, cq):
 
 
 @app.on_edited_message(
-    filters.command("sh") & sUDOERs & ~filters.forwarded & ~filters.via_bot
+    filters.command("sh") & SUDOERS & ~filters.forwarded & ~filters.via_bot
 )
-@app.on_message(filters.command("sh") & sUDOERs & ~filters.forwarded & ~filters.via_bot)
+@app.on_message(filters.command("sh") & SUDOERS & ~filters.forwarded & ~filters.via_bot)
 async def shellrunner(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="**example :**\n/sh git pull")

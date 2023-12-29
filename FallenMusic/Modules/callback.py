@@ -25,11 +25,11 @@ from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
 from pytgcalls.types import AudioPiped, HighQualityAudio
 
 from FallenMusic import (
-    Ass_ID,
-    Ass_NAME,
+    ASS_ID,
+    ASS_NAME,
     BOT_ID,
     BOT_MENTION,
-    BOT_UsERNAME,
+    BOT_USERNAME,
     LOGGER,
     app,
     fallendb,
@@ -183,14 +183,14 @@ async def unban_ass(_, CallbackQuery):
     umm = (await app.get_chat_member(int(chat_id), BOT_ID)).privileges
     if umm.can_restrict_members:
         try:
-            await app.unban_chat_member(int(chat_id), Ass_ID)
+            await app.unban_chat_member(int(chat_id), ASS_ID)
         except:
             return await CallbackQuery.answer(
                 "Failed to unban assistant.",
                 show_alert=True,
             )
         return await CallbackQuery.edit_message_text(
-            f"➻ {Ass_NAME} successfully Unbanned By {CallbackQuery.from_user.mention}.\n\nTry Playing Now..."
+            f"➻ {ASS_NAME} successfully Unbanned By {CallbackQuery.from_user.mention}.\n\nTry Playing Now..."
         )
     else:
         return await CallbackQuery.answer(

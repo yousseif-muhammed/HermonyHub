@@ -24,7 +24,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from pytgcalls.types import AudioPiped, HighQualityAudio, Update
 
-from FallenMusic import BOT_ID, BOT_UsERNAME, app, app2, fallendb, pytgcalls
+from FallenMusic import BOT_ID, BOT_USERNAME, app, app2, fallendb, pytgcalls
 from FallenMusic.Helpers import _clear_, buttons, gen_thumb
 
 welcome = 20
@@ -105,6 +105,6 @@ async def on_stream_end(pytgcalls, update: Update):
         await app.send_photo(
             chat_id=chat_id,
             photo=img,
-            caption=f"**➻ started streaming**\n\n‣ **title :** [{title[:27]}](https://t.me/{BOT_UsERNAME}?start=info_{videoid})\n‣ **duration :** `{duration}` minutes\n‣ **requested by :** {req_by}",
+            caption=f"**➻ started streaming**\n\n‣ **title :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **duration :** `{duration}` minutes\n‣ **requested by :** {req_by}",
             reply_markup=buttons,
         )
