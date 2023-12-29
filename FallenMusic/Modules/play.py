@@ -31,7 +31,7 @@ from pyrogram.errors import (
     UserNotParticipant,
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from pytgcalls import streamType
+from pytgcalls import StreamType
 from pytgcalls.exceptions import NoActiveGroupCall, TelegramserverError, UnMuteNeeded
 from pytgcalls.types import AudioPiped, HighQualityAudio
 from youtube_search import Youtubesearch
