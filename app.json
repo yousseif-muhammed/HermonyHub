@@ -32,11 +32,8 @@
         "required": true
       },
       "SESSION": {
-<<<<<<< HEAD
         "description": "A pyrogram v2 string SESSION from @stringFatherBot",
-=======
         "description": "A pyrogram v2 string session from @stringFatherBot",
->>>>>>> refs/remotes/origin/main
         "value": "",
         "required": true
       },
