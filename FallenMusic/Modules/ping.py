@@ -57,7 +57,7 @@ async def ping_fallen(_, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("❄ support ❄", url=config.sUPPORT_CHAT),
+                    InlineKeyboardButton("❄ support ❄", url=config.SUPPORT_CHAT),
                 ],
             ]
         ),

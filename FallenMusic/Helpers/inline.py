@@ -51,8 +51,8 @@ pm_buttons = [
     ],
     [InlineKeyboardButton(text="Help", callback_data="fallen_help")],
     [
-        InlineKeyboardButton(text="Channel", url=config.sUPPORT_CHANNEL),
-        InlineKeyboardButton(text="support Chat", url=config.sUPPORT_CHAT),
+        InlineKeyboardButton(text="Channel", url=config.SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="support Chat", url=config.SUPPORT_CHAT),
     ],
     [
         InlineKeyboardButton(text="Owner", user_id=config.OWNER_ID),
@@ -68,8 +68,8 @@ gp_buttons = [
         )
     ],
     [
-        InlineKeyboardButton(text="Channel", url=config.sUPPORT_CHANNEL),
-        InlineKeyboardButton(text="support Chat", url=config.sUPPORT_CHAT),
+        InlineKeyboardButton(text="Channel", url=config.SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="support Chat", url=config.SUPPORT_CHAT),
     ],
     [
 
@@ -97,7 +97,7 @@ helpmenu = [
 
 
 help_back = [
-    [InlineKeyboardButton(text="support Chat", url=config.sUPPORT_CHAT)],
+    [InlineKeyboardButton(text="support Chat", url=config.SUPPORT_CHAT)],
     [
         InlineKeyboardButton(text="Back", callback_data="fallen_help"),
         InlineKeyboardButton(text="Close", callback_data="close"),

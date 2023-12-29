@@ -68,7 +68,7 @@ async def fallen_st(_, message: Message):
                         [
                             InlineKeyboardButton(text="youtube", url=link),
                             InlineKeyboardButton(
-                                text="support", url=config.sUPPORT_CHAT
+                                text="support", url=config.SUPPORT_CHAT
                             ),
                         ],
                     ]
@@ -83,7 +83,7 @@ async def fallen_st(_, message: Message):
                 )
         else:
             await message.reply_photo(
-                photo=config.sTART_IMG,
+                photo=config.START_IMG,
                 caption=PM_sTART_TExT.format(
                     message.from_user.first_name,
                     BOT_MENTION,
@@ -92,12 +92,12 @@ async def fallen_st(_, message: Message):
             )
     else:
         await message.reply_photo(
-            photo=config.sTART_IMG,
+            photo=config.START_IMG,
             caption=sTART_TExT.format(
                 message.from_user.first_name,
                 BOT_MENTION,
                 message.chat.title,
-                config.sUPPORT_CHAT,
+                config.SUPPORT_CHAT,
             ),
             reply_markup=InlineKeyboardMarkup(gp_buttons),
         )
