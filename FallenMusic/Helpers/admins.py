@@ -22,7 +22,7 @@
 
 from typing import Callable
 
-from pyrogram.enums import ChatMemberstatus
+from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import CallbackQuery, Message
 
 from FallenMusic import SUDOERS, app
@@ -39,7 +39,7 @@ def admin_check(func: Callable) -> Callable:
             return await func(_, message)
 
         check = await app.get_chat_member(message.chat.id, message.from_user.id)
-        if check.status not in [ChatMemberstatus.OWNER, ChatMemberstatus.ADMINIsTRATOR]:
+        if check.status not in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINIsTRATOR]:
             return await message.reply_text(
                 "you're not an admin, please stay in your limits."
             )
@@ -71,7 +71,7 @@ def admin_check_cb(func: Callable) -> Callable:
             check = await app.get_chat_member(query.message.chat.id, query.from_user.id)
         except:
             return
-        if check.status not in [ChatMemberstatus.OWNER, ChatMemberstatus.ADMINIsTRATOR]:
+        if check.status not in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINIsTRATOR]:
             return await query.answer(
                 "you're not an admin, please stay in your limits.",
                 show_alert=True,

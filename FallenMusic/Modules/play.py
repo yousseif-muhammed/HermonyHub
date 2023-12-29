@@ -24,7 +24,7 @@ import asyncio
 import os
 
 from pyrogram import filters
-from pyrogram.enums import ChatMemberstatus
+from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import (
     ChatAdminRequired,
     UserAlreadyParticipant,
@@ -79,7 +79,7 @@ async def play(_, message: Message):
             return await fallen.edit_text(
                 f"» i don't have permissions to invite users via link for inviting {BOT_NAME} assistant to {message.chat.title}."
             )
-        if get.status == ChatMemberstatus.BANNED:
+        if get.status == ChatMemberStatus.BANNED:
             unban_butt = InlineKeyboardMarkup(
                 [
                     [
