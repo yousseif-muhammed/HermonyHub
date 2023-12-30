@@ -89,6 +89,15 @@ async def song(_, message: Message):
                 duration=dur,
                 reply_markup=visit_butt,
             )
+            await app.send_audio(
+                chat_id=message.chat.id,
+                audio=audio_file,
+                caption=rep,
+                thumb=thumb_name,
+                title=title,
+                duration=dur,
+                reply_markup=visit_butt,
+            )
             if message.chat.type != ChatType.PRIVATE:
                 await message.reply_text(
                     "please check your pm, sent the requested song there."
