@@ -45,8 +45,8 @@ async def sys_stats(_, message: Message):
         await message.delete()
     except:
         pass
-    SUDOERS = len(SUDOERS)
-    mod = len(ALL_MODULEs)
+    sudoers = len(SUDOERS)
+    mod = len(ALL_MODULES)
     hostname = socket.gethostname()
     ip_address = socket.gethostbyname(socket.gethostname())
     architecture = platform.machine()
