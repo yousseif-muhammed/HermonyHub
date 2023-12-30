@@ -13,27 +13,27 @@
     "env": {
       "API_ID": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "20158933",
+        "value": "",
         "required": true
       },
       "API_HASH": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "a6841bfb371f323d6f23076bde6a92df",
+        "value": "",
         "required": true
       },
       "BOT_TOKEN": {
         "description": "A Bot's token from Botfather",
-        "value": "6770414114:AAEBKMmHS9RwaYsBgLRy7xpwd20cLAySrns",
+        "value": "",
         "required": true
       },
       "OWNER_ID": {
         "description": "Fill your user id here. (Must be integer)",
-        "value": "5356545108",
+        "value": "",
         "required": true
       },
       "SESSION": {
         "description": "A pyrogram v2 string SESSION from @stringFatherBot",
-        "value": "BAEzmdUAqi76zSl31q7wOKnffdAiMTQQzicI-2NSO2BiJiuW0NUj42rQD2JOPAxMeVlh0Z0EDlldhniZCfqCIsPntpAzLiDq9hiozNIPKcX3xVsqYrhstGfX3s2z4wESDlo0qjHxDIzDyIcxIBJPAaGyMZ1eTYdVRKCkqj00eBK_Pad8mynCxB5o7aeRn2aRPUID3VxvRwZqQhdnozKes8MizBBvaZRUMx2tF5p08dHyFevyZbnHzW2QQfTWJoKDPRompUskwTb9oapG9HPdx-PVycekLxuy9ht9VyMuOdyPeCLqvf13DI83QrCRwM_YAfZgJ7zQY5qIGe0TVl4vFfHtVyrHSgAAAAGFtg7RAA",
+        "value": "",
         "required": true
       },
       "SUDO_USERS": {
