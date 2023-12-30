@@ -39,8 +39,8 @@ async def activevc(_, message: Message):
             title = (await app.get_chat(chat)).title
         except Exception:
             title = "Private Chat"
-        if (await app.get_chat(chat)).USERNAME:
-            user = (await app.get_chat(chat)).USERNAME
+        if (await app.get_chat(chat)).username:
+            user = (await app.get_chat(chat)).username
             text += f"<b>{j + 1}.</b>  [{title}](https://t.me/{user})\n"
         else:
             text += f"<b>{j + 1}. {title}</b> [`{chat}`]\n"
