@@ -96,7 +96,7 @@ async def play(_, message: Message):
                 reply_markup=unban_butt,
             )
     except UserNotParticipant:
-         if message.chat.username:
+        if message.chat.username:
             invitelink = message.chat.username
             try:
                 await app2.resolve_peer(invitelink)
