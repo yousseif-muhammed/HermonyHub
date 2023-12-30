@@ -228,13 +228,13 @@ async def play(_, message: Message):
     else:
         # Check if there's an active video chat
         try:
-            await pytgcalls.get_group_call(message.chat.id)
+            await pytgcalls.get_active_group_call(message.chat.id)
         except NoActiveGroupCall:
             # If no active video chat, create a new one
             try:
                 await pytgcalls.join_group_call(
                     message.chat.id,
-                    StreamType().pulse_stream,  # Replace with the appropriate stream type
+                    stream_type=StreamType().pulse_stream,  # Replace with the appropriate stream type
                 )
             except Exception as e:
                 return await fallen.edit_text(
