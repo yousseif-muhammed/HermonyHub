@@ -41,7 +41,7 @@ async def skip_str(_, message: Message):
             await _clear_(message.chat.id)
             await pytgcalls.leave_group_call(message.chat.id)
             await message.reply_text(
-                text=f"➻ stream skipped 🥺\n│ \n└by : {message.from_user.mention} 🥀\n\n**» no more queued tracks in** {message.chat.title}, **leaving videochat.**",
+                text=f"stream skipped, by : {message.from_user.mention} 🥀\n\n**» no more queued tracks in** {message.chat.title}, **leaving videochat.**",
                 reply_markup=close_key,
             )
         except:
@@ -66,7 +66,7 @@ async def skip_str(_, message: Message):
             return await pytgcalls.leave_group_call(message.chat.id)
 
         await message.reply_text(
-            text=f"➻ stream skipped 🥺\n│ \n└by : {message.from_user.mention} 🥀",
+            text=f"stream skipped, by : {message.from_user.mention} 🥀",
             reply_markup=close_key,
         )
         img = await gen_thumb(videoid, user_id)
