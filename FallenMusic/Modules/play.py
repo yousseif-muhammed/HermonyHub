@@ -183,7 +183,7 @@ async def play(_, message: Message):
         await fallen.edit_text("🔎")
         query = message.text.split(None, 1)[1]
         try:
-            results = Youtubesearch(query, max_results=1).to_dict()
+            results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
             title = results[0]["title"]
             videoid = results[0]["id"]
@@ -238,7 +238,7 @@ async def play(_, message: Message):
             return await fallen.edit_text(
                 "**» no active videochat found.**\n\nplease make sure you started the videochat."
             )
-        except TelegramserverError:
+        except TelegramServerError:
             return await fallen.edit_text(
                 "» telegram is having some internal problems, please restart the videochat and try again."
             )
