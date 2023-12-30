@@ -229,7 +229,7 @@ async def play(_, message: Message):
         )
     else:
         stream = AudioPiped(file_path, audio_parameters=HighQualityAudio())
-         try:
+        try:
             pytgcalls_app.start()
             pytgcalls_app.join_group_call(
                 chat_id,
