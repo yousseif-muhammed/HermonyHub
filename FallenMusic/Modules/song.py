@@ -98,7 +98,7 @@ async def song(_, message: Message):
                     title=title,
                     duration=dur,
                     reply_markup=visit_butt,
-            ).
+                ),
                 await message.reply_text(
                     "please check your pm, sent the requested song there. and in group"
                 )
