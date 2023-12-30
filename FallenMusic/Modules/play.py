@@ -96,8 +96,8 @@ async def play(_, message: Message):
                 reply_markup=unban_butt,
             )
     except UserNotParticipant:
-        if message.chat.USERNAMe:
-            invitelink = message.chat.USERNAMe
+        if message.chat.USERNAME:
+            invitelink = message.chat.USERNAME
             try:
                 await app2.resolve_peer(invitelink)
             except Exception as ex:
@@ -159,7 +159,7 @@ async def play(_, message: Message):
 
     elif url:
         try:
-            results = Youtubesearch(url, max_results=1).to_dict()
+            results = YoutubeSearch(url, max_results=1).to_dict()
             title = results[0]["title"]
             duration = results[0]["duration"]
             videoid = results[0]["id"]
