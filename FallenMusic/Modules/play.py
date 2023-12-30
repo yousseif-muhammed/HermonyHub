@@ -143,10 +143,10 @@ async def play(_, message: Message):
     )
     url = get_url(message)
     if audio:
-        if round(audio.duration / 60) > DURATION_LIMIT:
-            raise DurationLimitError(
-                f"» sorry baby, track longer than  {DURATION_LIMIT} minutes are not allowed to play on {BOT_NAME}."
-            )
+        if (audio.duration / 60) > DURATION_LIMIT:
+    return await fallen.edit_text(
+        f"» sorry baby, track longer than  {DURATION_LIMIT} minutes are not allowed to play on {BOT_NAME}."
+    )
 
         file_name = get_file_name(audio)
         title = file_name
