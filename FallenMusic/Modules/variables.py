@@ -38,11 +38,8 @@ async def get_vars(_, message: Message):
             text=f"""<u>**{BOT_NAME} config variables :**</u>
 
 **api_id :** `{config.API_ID}`
-<<<<<<< HEAD
 **API_HAsH :** `{config.API_HASH}`
-=======
 **API_HAsH :** `{config.API_HAsH}`
->>>>>>> refs/remotes/origin/main
 
 **bot_token :** `{config.BOT_TOKEN}`
 **duration_limit :** `{config.DURATION_LIMIT}`
