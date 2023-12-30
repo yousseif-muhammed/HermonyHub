@@ -226,21 +226,6 @@ async def play(_, message: Message):
             reply_markup=buttons,
         )
     else:
-        # Check if there's an active video chat
-        try:
-            await pytgcalls.get_active_group_call(message.chat.id)
-        except NoActiveGroupCall:
-            # If no active video chat, create a new one
-            try:
-                await pytgcalls.join_group_call(
-                    message.chat.id,
-                    stream_type=StreamType().pulse_stream,  # Replace with the appropriate stream type
-                )
-            except Exception as e:
-                return await fallen.edit_text(
-                    f"Failed to start video chat: {str(e)}"
-                )
-
         stream = AudioPiped(file_path, audio_parameters=HighQualityAudio())
         try:
             await pytgcalls.join_group_call(
