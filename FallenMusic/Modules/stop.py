@@ -41,6 +41,6 @@ async def stop_str(_, message: Message):
         pass
 
     return await message.reply_text(
-        text=f"➻ **stream ended/stopped** ❄\n│ \n└by : {message.from_user.mention} 🥀",
+        text=f"**stream ended/stopped**, by : {message.from_user.mention} 🥀",
         reply_markup=close_key,
     )
