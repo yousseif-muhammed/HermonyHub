@@ -52,17 +52,17 @@ async def fallen_st(_, message: Message):
                     link = result["link"]
                     published = result["publishedTime"]
                 searched_text = f"""
-➻ **track infornation** 
+**track infornation** 
 
-📌 **title :** {title}
+**title :** {title}
 
-⏳ **duration :** {duration} minutes
-👀 **views :** `{views}`
-⏰ **published on :** {published}
-🔗 **link :** [watch on youtube]({link})
-🎥 **channel :** [{channel}]({channellink})
+**duration :** {duration} minutes
+**views :** `{views}`
+**published on :** {published}
+**link :** [watch on youtube]({link})
+**channel :** [{channel}]({channellink})
 
-💖 search powered by {BOT_NAME}"""
+search powered by {BOT_NAME}"""
                 key = InlineKeyboardMarkup(
                     [
                         [
