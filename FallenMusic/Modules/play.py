@@ -196,10 +196,10 @@ async def play(_, message: Message):
 
         except Exception as e:
             LOGGER.error(str(e))
-            return await fallen.edit("» failed to process query, try playing again...")
+            return await fallen.edit_text("» failed to process query, try playing again...")
 
         if (dur / 60) > DURATION_LIMIT:
-            return await fallen.edit(
+            return await fallen.edit_text(
                 f"» sorry baby, track longer than  {DURATION_LIMIT} minutes are not allowed to play on {BOT_NAME}."
             )
         file_path = audio_dl(url)
