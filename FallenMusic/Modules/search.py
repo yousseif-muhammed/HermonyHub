@@ -38,15 +38,15 @@ async def ytsearch(_, message: Message):
             return await message.reply_text("» give some text to search baby !")
         query = message.text.split(None, 1)[1]
         m = await message.reply_text("🔎")
-        results = Youtubesearch(query, max_results=4).to_dict()
+        results = YoutubeSearch(query, max_results=4).to_dict()
         i = 0
         text = ""
         while i < 4:
-            text += f"✨ title : {results[i]['title']}\n"
-            text += f"⏱ duration : `{results[i]['duration']}`\n"
-            text += f"👀 views : `{results[i]['views']}`\n"
-            text += f"📣 channel : {results[i]['channel']}\n"
-            text += f"🔗 link : https://youtube.com{results[i]['url_suffix']}\n\n"
+            text += f"title : {results[i]['title']}\n"
+            text += f"duration : `{results[i]['duration']}`\n"
+            text += f"views : `{results[i]['views']}`\n"
+            text += f"channel : {results[i]['channel']}\n"
+            text += f"link : https://youtube.com{results[i]['url_suffix']}\n\n"
             i += 1
         key = InlineKeyboardMarkup(
             [
