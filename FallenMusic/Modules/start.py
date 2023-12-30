@@ -41,7 +41,7 @@ async def fallen_st(_, message: Message):
                 m = await message.reply_text("🔎")
                 query = (str(cmd)).replace("info_", "", 1)
                 query = f"https://www.youtube.com/watch?v={query}"
-                results = Videossearch(query, limit=1)
+                results = VideosSearch(query, limit=1)
                 for result in (await results.next())["result"]:
                     title = result["title"]
                     duration = result["duration"]
