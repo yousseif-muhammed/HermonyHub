@@ -89,7 +89,7 @@ async def song(_, message: Message):
                 duration=dur,
                 reply_markup=visit_butt,
             )
-            await app.send_audio(
+             await app.send_audio(
                 chat_id=message.chat.id,
                 audio=audio_file,
                 caption=rep,
@@ -100,7 +100,7 @@ async def song(_, message: Message):
             )
             if message.chat.type != ChatType.PRIVATE:
                 await message.reply_text(
-                    "please check your pm, sent the requested song there."
+                    "please check your pm, sent the requested song there. and in group"
                 )
         except:
             start_butt = InlineKeyboardMarkup(
