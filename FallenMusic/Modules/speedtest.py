@@ -30,7 +30,7 @@ from FallenMusic import SUDOERS, app
 
 def testspeed(m):
     try:
-        test = speedtest.speedtest()
+        test = speedtest.Speedtest()
         test.get_best_server()
         m = m.edit("**⇆ running download speedtest...**")
         test.download()
