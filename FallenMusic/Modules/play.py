@@ -32,8 +32,6 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pytgcalls import StreamType
-from pytgcalls import PyTgCalls, idle
-from pytgcalls import MediaStream
 from pytgcalls.exceptions import NoActiveGroupCall, TelegramServerError, UnMuteNeeded
 from pytgcalls.types import AudioPiped, HighQualityAudio
 from youtube_search import YoutubeSearch
@@ -60,7 +58,7 @@ from FallenMusic.Helpers.inline import buttons
 from FallenMusic.Helpers.queue import put
 from FallenMusic.Helpers.thumbnails import gen_qthumb, gen_thumb
 
-pytgcalls_app = PyTgCalls(app)
+
 
 @app.on_message(
     filters.command(["play", "vplay", "p"])
