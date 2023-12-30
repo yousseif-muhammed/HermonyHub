@@ -231,7 +231,7 @@ async def play(_, message: Message):
             await pytgcalls.join_group_call(
                 message.chat.id,
                 stream,
-                stream_type=streamType().pulse_stream,
+                stream_type=StreamType().pulse_stream,
             )
 
         except NoActiveGroupCall:
