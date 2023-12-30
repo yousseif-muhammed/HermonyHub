@@ -102,7 +102,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_on(query.message.chat.id)
         await pytgcalls.resume_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f" stream Resumed 💫\n│ \n└by : {query.from_user.mention}",
+            text=f" stream Resumed \n│ \n└by : {query.from_user.mention}",
             reply_markup=close_key,
         )
 
@@ -165,7 +165,7 @@ async def admin_cbs(_, query: CallbackQuery):
 
             img = await gen_thumb(videoid, user_id)
             await query.edit_message_text(
-                text=f"The stream has been skipped. 🥺\n\n**» No more queued tracks in** {query.message.chat.title}, leaving video chat",
+                text=f"The stream has been skipped. \n\n**» No more queued tracks in** {query.message.chat.title}, leaving video chat",
                 reply_markup=close_key,
             )
             return await query.message.reply_photo(
@@ -208,7 +208,7 @@ async def help_menu(_, query: CallbackQuery):
 
     try:
         await query.edit_message_text(
-            text=f"๏ hey {query.from_user.first_name}, 🥀\n\nplease click on the button below for which you wanna get help.",
+            text=f"Hi {query.from_user.first_name}, \n\nplease click on the button below for which you wanna get help.",
             reply_markup=InlineKeyboardMarkup(helpmenu),
         )
     except Exception as e:
