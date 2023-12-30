@@ -36,7 +36,7 @@ async def sudoadd(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             return await message.reply_text(
-                "» reply to a user's message or give USERNAMe/user id."
+                "» reply to a user's message or give USERNAME/user id."
             )
         user = message.text.split(None, 1)[1]
         if "@" in user:
